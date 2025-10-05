@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane style="-fx-background-image: blue;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.seuapp.controller.MainController">
+    <top>
+        <ToolBar>
+            <Button onAction="#onCadastrar" style="-fx-background-color: blue;" text="Cadastrar" textFill="#fff9f9" />
+            <Button onAction="#onConsultar" style="-fx-background-color: blue;" text="Consultar" textFill="WHITE" />
+            <Button onAction="#onExcluir" style="-fx-background-color: blue;" text="Excluir" textFill="WHITE" />
+            <Button onAction="#onListar" style="-fx-background-color: blue;" text="Listar" textFill="#fff9f9" />
+            <Separator orientation="VERTICAL" />
+            <Button onAction="#onRelatorioVencimento" style="-fx-background-color: blue;" text="Relatório: Próx. 60 dias" textFill="WHITE" />
+            <Button onAction="#onRelatorioEstoque" style="-fx-background-color: blue;" text="Relatório: Estoque &lt; 10" textFill="WHITE" />
+            <Button onAction="#onRelatorioMargem" style="-fx-background-color: blue;" text="Relatório: Margem por Categoria" textFill="WHITE" />
+            <Button onAction="#onListarPorSetor" style="-fx-background-color: blue;" text="Listar por Setor" textFill="WHITE" />
+
+
+
+        </ToolBar>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="20" />
+                    <ColumnConstraints percentWidth="30" />
+                    <ColumnConstraints percentWidth="20" />
+                    <ColumnConstraints percentWidth="30" />
+                </columnConstraints>
+
+                <children>
+                    <Label text="Código (8 chars)" />
+                    <TextField fx:id="txtCodigo" GridPane.columnIndex="1" />
+
+                    <Label text="Nome" GridPane.rowIndex="1" />
+                    <TextField fx:id="txtNome" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Descrição" GridPane.rowIndex="2" />
+                    <TextField fx:id="txtDescricao" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Label text="Fabricação (dd/MM/yyyy)" GridPane.rowIndex="3" />
+                    <DatePicker fx:id="dpFabricacao" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label text="Validade (dd/MM/yyyy)" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                    <DatePicker fx:id="dpValidade" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+                    <Label text="Preço Compra" GridPane.rowIndex="4" />
+                    <TextField fx:id="txtPrecoCompra" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                    <Label text="Preço Venda" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                    <TextField fx:id="txtPrecoVenda" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+
+                    <Label text="Qtde Estoque" GridPane.rowIndex="5" />
+                    <TextField fx:id="txtQuantidade" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                    <Label text="Categoria: ID" GridPane.rowIndex="6" />
+                    <TextField fx:id="txtCatId" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                    <Label text="Categoria: Nome" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                    <TextField fx:id="txtCatNome" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+
+                    <Label text="Categoria: Descrição" GridPane.rowIndex="7" />
+                    <TextField fx:id="txtCatDesc" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+                    <Label text="Categoria: Setor" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                    <TextField fx:id="txtCatSetor" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                </children>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+
+            <TableView fx:id="tblProdutos" prefHeight="300">
+                <columns>
+                    <!-- Básicos -->
+                    <TableColumn fx:id="colCodigo" prefWidth="100" text="Código" />
+                    <TableColumn fx:id="colNome" prefWidth="160" text="Nome" />
+                    <TableColumn fx:id="colDescricao" prefWidth="200" text="Descrição" />
+
+                    <!-- Datas -->
+                    <TableColumn fx:id="colFab" prefWidth="100" text="Fabricação" />
+                    <TableColumn fx:id="colVal" prefWidth="100" text="Validade" />
+
+                    <!-- Preços -->
+                    <TableColumn fx:id="colCompra" prefWidth="110" text="Preço Compra" />
+                    <TableColumn fx:id="colVenda" prefWidth="110" text="Preço Venda" />
+
+                    <!-- Estoque -->
+                    <TableColumn fx:id="colQtde" prefWidth="80" text="Estoque" />
+
+                    <!-- Categoria (campos separados) -->
+                    <TableColumn fx:id="colCatId" prefWidth="70" text="Cat. ID" />
+                    <TableColumn fx:id="colCatNome" prefWidth="140" text="Cat. Nome" />
+                    <TableColumn fx:id="colCatDesc" prefWidth="180" text="Cat. Descrição" />
+                    <TableColumn fx:id="colCatSetor" prefWidth="120" text="Cat. Setor" />
+                </columns>
+
+            </TableView>
+        </VBox>
+    </center>
+
+    <padding><Insets topRightBottomLeft="10" /></padding>
+</BorderPane>

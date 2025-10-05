@@ -1,0 +1,8 @@
+br\com\seuapp\service\ProdutoService$NomePorSetor.class
+br\com\seuapp\controller\MainController.class
+br\com\seuapp\repository\ProdutoRepository.class
+br\com\seuapp\MainApp.class
+br\com\seuapp\model\Categoria.class
+br\com\seuapp\service\ProdutoService.class
+br\com\seuapp\util\CSVUtils.class
+br\com\seuapp\model\Produto.class

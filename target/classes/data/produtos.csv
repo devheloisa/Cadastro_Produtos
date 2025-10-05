@@ -1,0 +1,6 @@
+codigo;nome;descricao;dataFabricacao;dataValidade;precoCompra;precoVenda;quantidadeEstoque;categoriaId;categoriaNome;categoriaDescricao;categoriaSetor
+CAFE1234;Cafe 5L;Café torrado;01/10/2025;22/10/2025;20.00;30;50;103;Comestivel;Bebida;Soluvel
+FARINH01;Farinha de Trigo 1kg;Tipo 1, pacote 1kg;05/07/2025;03/12/2025;5.20;7.49;35;201;Mercearia;Grãos e farináceos;Secos
+IOGURTE1;Iogurte Natural 170g;Integral, copo 170g;20/09/2025;15/01/2026;3.10;4.59;6;103;Laticínios;Leite e derivados;Refrigerados
+SABONE01;Sabonete Neutro 90g;Hipoalergênico;10/08/2025;10/08/2027;2.00;3.50;4;301;Higiene Pessoal;Sabonetes e cuidados;Perfumaria
+MACARR01;Macarrão Espaguete 500g;Massa sêmola, pacote 500g;05/05/2025;05/05/2027;4.30;6.99;120;202;Massas;Massas secas;Secos
